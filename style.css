@@ -95,6 +95,7 @@ ul {
 
 li {
     margin: 0 2rem;
+    transition: transform 0.3s;
 }
 
 nav a {
@@ -104,8 +105,8 @@ nav a {
     transition: color 0.3s;
 }
 
-nav a:hover {
-    color: #f0f0f0;
+nav li:hover {
+    transform: scale(1.1);
 }
 
 .hamburger-menu {
