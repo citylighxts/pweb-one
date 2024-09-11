@@ -1,0 +1,544 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+}
+
+.page1 {
+    background-color: #f0f0f0;
+    position: relative;
+    color: #a7097a;
+    text-align: start;
+    font-size: 5rem;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.page1 h1 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    padding-left: 3rem;
+}
+
+.page1.active h1 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sticky-button {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    width: 60px;
+    height: 120px;
+    background-color: #a7097a;
+    color: white;
+    border: none;
+    border-radius: 60px 0 0 60px;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #a7097a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+nav.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 0 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #f0f0f0;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+@media (max-width: 576px) {
+    .nav-container {
+        justify-content: start;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content: start;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #a7097a;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 1rem 0;
+        align-items: center;
+    }
+
+    ul.show {
+        display: flex;
+    }
+
+    li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+    }
+}
+
+.page2 {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding-top: 7rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.page2.active {
+    opacity: 1;
+}
+
+.page2 h2 {
+    color: black;
+    font-size: 5rem;
+    text-align: center;
+}
+
+@media (min-width: 1200px) {
+    .page2 h2 {
+        text-align: start;
+    }
+}
+
+.part-two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-container {
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.circle-container img {
+    width: 110%;
+    height: 110%;
+    object-fit: contain;
+    object-position: center;
+}
+
+@media (min-width: 1200px) {
+    .part-two {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 1200px;
+        width: 100%;
+    }
+
+    .circle-container {
+        width: 500px;
+        height: 500px;
+        flex-shrink: 0;
+    }
+}
+
+img {
+    border-radius: 50%;
+    transform: translateY(-2rem);
+}
+
+@media (max-width: 768px) {
+    .part-two {
+        padding: 2rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .circle-container {
+        margin-bottom: 2rem;
+    }
+
+    .two-right {
+        padding: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .part-two {
+        padding: 1.5rem;
+    }
+}
+
+.two-right {
+    padding: 0 5rem;
+}
+
+.about {
+    text-align: justify;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.part-three {
+    padding: 0 10rem;
+}
+
+.socmed-about {
+    color: black;
+    font-size: 1.5rem;
+    text-align: start;
+}
+
+.socmed-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.classic-button {
+    background-color: #a7097a;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin: 0.5rem 0;
+    width: 3rem;
+    height: 3rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.classic-button:hover {
+    background-color: #d41e9a;
+    transform: scale(1.1);
+}
+
+i {
+    font-size: 2rem;
+}
+
+.socmed-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.socmed-names {
+    font-size: 1.5rem;
+}
+
+.part-four {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.instagram-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+
+.instagram-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 0;
+}
+
+@media (min-width: 1200px) {
+    .instagram-item img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .instagram-grid {
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .instagram-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin: 0 auto;
+        max-width: 300px;
+    }
+}
+
+.instagram-item:hover img {
+    transform: scale(1.1);
+}
+
+.page2 h3 {
+    color: black;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.education {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.education-item {
+    margin-bottom: 2rem;
+}
+
+.education-item h4 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.education-item p {
+    font-size: 1.5rem;
+    margin: 0.2rem 0;
+    color: #777;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: auto;
+    width: 100%;
+    padding-bottom: 10rem;
+    position: relative;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.footer-icons {
+    margin-top: 1rem;
+}
+
+.footer-icons a {
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+
+.footer-icons .classic-button {
+    background-color: #444;
+    border: none;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.footer-icons .classic-button:hover {
+    background-color: #555;
+}
+
+.footer-icons .classic-button i {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 1.5rem 1rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+    }
+
+    .footer-icons .classic-button {
+        padding: 0.4rem;
+    }
+
+    .footer-icons .classic-button i {
+        font-size: 1.3rem;
+    }
+
+    .page1 {
+        font-size: 4rem;
+    }
+
+    .page2 h2 {
+        font-size: 4rem;
+    }
+
+    .about {
+        font-size: 1.3rem;
+    }
+
+    .socmed-about {
+        font-size: 1.3rem;
+    }
+
+    .page2 h3 {
+        font-size: 2.5rem;
+    }
+
+    .education-item h4 {
+        font-size: 1.4rem;
+    }
+
+    .education-item p {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer {
+        padding: 1rem 0.5rem;
+        padding-bottom: 10rem;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+    }
+
+    .footer-icons .classic-button {
+        padding: 0.3rem;
+    }
+
+    .footer-icons .classic-button i {
+        font-size: 1.1rem;
+    }
+
+    .page1 {
+        font-size: 3rem;
+    }
+
+    .page2 h2 {
+        font-size: 3rem;
+    }
+
+    .about {
+        font-size: 1.1rem;
+    }
+
+    .socmed-about {
+        font-size: 1.1rem;
+    }
+
+    .page2 h3 {
+        font-size: 2rem;
+    }
+
+    .education-item h4 {
+        font-size: 1.2rem;
+    }
+
+    .education-item p {
+        font-size: 1.1rem;
+    }
+}
